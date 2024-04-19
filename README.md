@@ -3,7 +3,7 @@
 #2:Run the file from the Terminal
 
   #On the terminal, cd to the file location and type:
-      'python EscapethePCAP.py'
+      python EscapethePCAP.py
 
-      (no quotations)
+#      (no quotations)
 
