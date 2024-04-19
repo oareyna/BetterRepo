@@ -1,2 +1,4 @@
+
 # download escapthepcap
-#run in pycharm
+#run in a terminal
+
