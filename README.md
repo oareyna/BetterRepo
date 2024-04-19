@@ -1,5 +1,5 @@
 
-#1: Download the file "EscapethePCAP".py
+#1: Download the file "EscapethePCAP.py" /n
 #2:Run the file from the Terminal
 
   #On the terminal, cd to the file location and type:
