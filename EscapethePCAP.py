@@ -62,6 +62,11 @@ def end_screen1():
   """
 
     print(end_scene)
+    quit=input("Enter q to quit: ")
+    while quit != "q":
+      quit=input("Enter q to quit: ").lower()
+    if quit == "q":
+        exit()
     s(2)
 
 
