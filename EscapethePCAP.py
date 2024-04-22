@@ -22,7 +22,7 @@ def instructions():
     \n""")
 
 
-# makes sure that the user can access the menu at any time
+# Function that creates a menu and makes sure that the user can access the menu at any time
 def menu():
     while True:
         print("Type 'help' to see the list of commands; 'r' to return")
@@ -119,12 +119,13 @@ def end_game():
         ''')
 
     s(3)
+#Prints appropriate end screen according to whether the player passed or not the exam
     if result == 'PASS':
         print('Congratulations! You have passed your exam')
         end_screen2()
     else:
         end_screen1()
-
+#exits program
     sys.exit()
 
 
@@ -162,7 +163,7 @@ def main():
             super().__init__(name, score)
             self.easy = easy  # initialize variable for easy question dictionary
             self.__score = 0
-            inventory.clear()
+            inventory.clear() #clears inventory list
 
             questions = list(easy.keys())  # assigns questions to a list to manipulate
             q = 1  # question number player starts on
@@ -177,9 +178,9 @@ def main():
 
                 question = r.choice(questions)  # selects questions from list at random
                 while True:
-                    print(f'question {q}:\n{question}')
+                    print(f'question {q}:\n{question}') #prints question
                     s(1)
-                    user_input = input('\nAnswer: ').upper()
+                    user_input = input('\nAnswer: ').upper() #requests user's answer
 
                     # if user input is valid response, check if is value of question in dictionary
                     if user_input in {'A', 'B', 'C', 'D'}:
@@ -193,11 +194,11 @@ def main():
 
                             # lets user know that they have obtained a part of the key
                             if correct < 3:
-                                inventory.append('partofkey')
+                                inventory.append('partofkey') #adds part of key to inventory list
                                 print('You have obtained a part of a key! ')
                             if correct == 3:
                                 inventory.clear()
-                                inventory.append('Key1')
+                                inventory.append('Key1') #Remove everything from inventory and adds a whole key
                                 print('You have obtained a key! Finish the test to unlock the next door. ')
                                 input("\nPress [ENTER] to continue")
                         else:
@@ -213,7 +214,7 @@ def main():
                             # Add additional conditions if other functionalities are to be handled differently
                         else:
                             print("Invalid input. Please try again.")
-                            user_input = input(': ').upper()
+                            user_input = input(': ').upper() #Request new input if user's input is not one of the valid choices
                     else:
                         os('cls')
                         print("Invalid input. Please try again.\n")
@@ -237,7 +238,7 @@ def main():
             self.medium = medium  # initialize variable for medium question dictionary
             self.__score = score
 
-            if 'Key1' in inventory:
+            if 'Key1' in inventory: # Checks if item is in inventory
                 print()
                 os('cls')
                 print('unlocking the door to the next room. You step forward, ready to face the next challenge.')
@@ -252,8 +253,8 @@ def main():
                 print('You have not obtained the key to unlock this door.')
                 s(1)
                 input("\nPress [ENTER] to return back to previous room")
-                scene1()
-            inventory.clear()
+                scene1()   # User replays previous room if key is not found in inventory
+            inventory.clear()  # Previous key gets deleted from inventory
 
 
             questions = list(medium.keys())  # assigns questions to a list to manipulate
@@ -289,7 +290,7 @@ def main():
                                 print('You have obtained a part of a key! ')
                             if correct == 3:
                                 inventory.clear()
-                                inventory.append('Key2')
+                                inventory.append('Key2')  # Removes parts of keys from inventory and adds whole key
                                 print('You have obtained a key! Finish the test to unlock the next door. ')
                                 input("\nPress [ENTER] to continue")
                         else:
@@ -311,7 +312,7 @@ def main():
                         print("Invalid input. Please try again.\n")
                 questions.remove(question)  # remove question to avoid repeating question
                 q += 1
-            # if the user misses 2 questions, they fail the test and end the game
+            # if the user misses 3 questions, they fail the test and end the game
             if incorrect >= 3:
                 os('cls')
                 print('You have reached the end of your exam')
@@ -327,7 +328,7 @@ def main():
             self.hard = hard  # initialize variable for medium question dictionary
             self.__score = score
 
-            if 'Key2' in inventory:
+            if 'Key2' in inventory: # Checks if item is in inventory, if it is, prints new room storyline
                 print()
                 os('cls')
                 print('As you step into the last room, you\'re enveloped by an allure of the atmospheres intrigue.')
@@ -339,7 +340,7 @@ def main():
                 print('You have not obtained the key to unlock this door.')
                 s(1)
                 input("\nPress [ENTER] to return back to previous room")
-                scene2()
+                scene2()    # User replays previous room if key is not found in inventory
             inventory.clear()
 
 
@@ -388,6 +389,7 @@ def main():
                         print("Invalid input. Please try again.\n")
                 questions.remove(question)  # remove question to avoid repeating question
                 q += 1
+            # if the user misses 3 questions, they fail the test and end the game
             if incorrect >= 3:
                 os('cls')
                 print('You have reached the end of your exam')
