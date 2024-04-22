@@ -60,6 +60,7 @@ def end_screen1():
      |_|\___/ \__,_|  \__,_|_|\__,_| |_| \_|\___/ |_|    \___||___/\___\__,_| .__/ \___(_|_|_)
                                                                             |_|               
   """
+
     print(end_scene)
     s(2)
 
@@ -74,8 +75,13 @@ ___  _ ____  _       ____  _  ____    _____ ____  ____  ____  ____  _____
 /_/   \____/\____/  \____/\_/\____/  \____\\____/\____/\_/ \|\_/   \____\
 
     """
+  
     print(end_scene)
-
+    quit=input("Enter q to quit: ")
+    while quit != "q":
+      quit=input("Enter q to quit: ").lower()
+    if quit == "q":
+        exit()
 
 # mary
 def end_game():
@@ -117,6 +123,11 @@ def end_game():
                 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░
 
         ''')
+    quit=input("Enter q to quit: ")
+    while quit != "q":
+      quit=input("Enter q to quit: ").lower()
+    if quit == "q":
+        exit()
 
     s(3)
 #Prints appropriate end screen according to whether the player passed or not the exam
@@ -651,6 +662,5 @@ D. print <generator object f at (some hex digits)>''': 'A'})
     s(1)
     input("\nPress [ENTER] to view certificate")
     end_game()
-
 
 main()
